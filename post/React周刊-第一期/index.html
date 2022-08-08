@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>React周刊 - 第一期 | React周刊  --  知识铺</title>
+    <meta property="og:title" content="React周刊 - 第一期 - React周刊  --  知识铺">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-08-08T09:07:31&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-08-08T09:07:31&#43;08:00'>
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记,知识铺,java,android,博客,项目管理,python,React、Next、Vue、软件架构,公众号,小程序">
+    <meta name="description" content="React周刊 - 第一期">
+        <meta name="author" content="知识铺">
+        
+    <meta property="og:url" content="https://weeklyreact.zshipu.com/post/React%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    <script data-ad-client="ca-pub-2874221941555456" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+    
+    
+    
+    
+    
+    
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WLWJSST');</script>
+    
+</head>
+
+
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLWJSST"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://weeklyreact.zshipu.com/">
+                        React周刊  --  知识铺
+                    </a>
+                
+                <p class="description">专注于Android、Java、Go语言(golang)、React、Next、Vue、移动互联网、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://weeklyreact.zshipu.com/">首页</a>
+                    
+                    <a  href="https://weeklyreact.zshipu.com/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://weeklyreact.zshipu.com/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#react">React</a></li>
+<li><a href="#react原生">React原生</a></li>
+<li><a href="#其他">其他</a>
+<ul>
+<li><a href="#react-第一部分-react-基本使用-pudn-com-https-www-pudn-com-news-62eb4c0555398e076b202b48-html"><a href="https://www.pudn.com/news/62eb4c0555398e076b202b48.html">【*React*】第一部分 <em>React</em> 基本使用-pudn.com</a></a></li>
+<li><a href="#你需要知道的-12-道-react-面试题-掘金-https-juejin-cn-post-7127614623531925518"><a href="https://juejin.cn/post/7127614623531925518">你需要知道的 12 道 <em>React</em> 面试题 - 掘金</a></a></li>
+<li><a href="#使用-react-实现轮播效果组件示例代码-javascript-考高分网-http-www-kaotop-com-it-94415-html"><a href="http://www.kaotop.com/it/94415.html">使用*React*实现轮播效果组件示例代码_JavaScript-考高分网</a></a></li>
+<li><a href="#深入理解-react-native原生模块与-js-模块通信的几种方式-jav-http-www-kaotop-com-it-86076-html"><a href="http://www.kaotop.com/it/86076.html">深入理解<em>React</em> Native原生模块与*JS*模块通信的几种方式_Jav&hellip;</a></a></li>
+<li><a href="#react-学习笔记产出-pudn-com-https-www-pudn-com-news-62ed169255398e076b2c7d25-html"><a href="https://www.pudn.com/news/62ed169255398e076b2c7d25.html">*react*学习笔记产出-pudn.com</a></a></li>
+<li><a href="#基于next-js-prisma-postgres和fastfy构建全栈app-https-baijiahao-baidu-com-s-id-1740010025189976507-wfr-spider-for-pc"><a href="https://baijiahao.baidu.com/s?id=1740010025189976507&amp;wfr=spider&amp;for=pc">基于Next.*js*、Prisma、Postgres和Fastfy构建全栈APP</a></a></li>
+<li><a href="#javascript-reactjs-开发实习工作总结-javascript-react-https-www-kanzhun-com-conclusion-373164"><a href="https://www.kanzhun.com/conclusion/373164/">【javascript <em>reactjs</em> 开发实习工作总结_javascript react&hellip;</a></a></li>
+<li><a href="#前端常考-react-相关面试题-一-知乎-https-zhuanlan-zhihu-com-p-550072060"><a href="https://zhuanlan.zhihu.com/p/550072060">前端常考*react*相关面试题(一) - 知乎</a></a></li>
+<li><a href="#reactjs-defaultprops-should-be-declared-outside-the-https-stackoverflow-com-questions-64950888-defaultprops-should-be-declared-outside-the-class-body"><a href="https://stackoverflow.com/questions/64950888/defaultprops-should-be-declared-outside-the-class-body"><em>reactjs</em> - defaultProps should be declared outside the &hellip;</a></a></li>
+<li><a href="#reactjs-eslint-missing-return-type-on-function-rea-https-stackoverflow-com-questions-67256329-eslint-missing-return-type-on-function-react-component-typescript-error-expl"><a href="https://stackoverflow.com/questions/67256329/eslint-missing-return-type-on-function-react-component-typescript-error-expl"><em>reactjs</em> - ESLint - missing return type on function rea&hellip;</a></a></li>
+<li><a href="#前端性能优化之按需加载-react-router-webpack-javascrip-http-www-kaotop-com-it-245289-html"><a href="http://www.kaotop.com/it/245289.html">前端性能优化之按需加载(<em>React</em>-router+webpack)_JavaScrip&hellip;</a></a></li>
+<li><a href="#标签-react-router-dom-堆栈内存溢出-https-stackoom-com-tag-react-router-dom">[标签<a href="https://stackoom.com/tag/react-router-dom"><em>react</em>-router-dom] - 堆栈内存溢出</a></a></li>
+<li><a href="#桂林web前端-熟悉vue-js-react-招聘-桂林web前端-熟悉vuej-https-www-kanzhun-com-recruit-313123-c33"><a href="https://www.kanzhun.com/recruit/313123/c33/">【桂林web前端 熟悉vue<em>js</em> *react*招聘|桂林web前端 熟悉vuej&hellip;</a></a></li>
+<li><a href="#reactjs-error-eisdir-illegal-operation-on-a-direct-https-stackoverflow-com-questions-68671582-error-eisdir-illegal-operation-on-a-directory-when-i-run-react-native-ios"><a href="https://stackoverflow.com/questions/68671582/error-eisdir-illegal-operation-on-a-directory-when-i-run-react-native-ios"><em>reactjs</em> - Error: EISDIR: illegal operation on a direct&hellip;</a></a></li>
+<li><a href="#reactjs-framer-motion-exit-affter-few-seconds-stac-https-stackoverflow-com-questions-64338587-framer-motion-exit-affter-few-seconds"><a href="https://stackoverflow.com/questions/64338587/framer-motion-exit-affter-few-seconds"><em>reactjs</em> - framer-motion exit affter few seconds - Stac&hellip;</a></a></li>
+<li><a href="#segmentfault-最新的文章-https-segmentfault-com-feeds-blogs"><a href="https://segmentfault.com/feeds/blogs">SegmentFault 最新的文章</a></a></li>
+<li><a href="#reactjs-create-typescript-interface-with-all-propert-https-stackoverflow-com-questions-66086651-create-typescript-interface-with-all-properties-for-concrete-jsx-component"><a href="https://stackoverflow.com/questions/66086651/create-typescript-interface-with-all-properties-for-concrete-jsx-component"><em>reactjs</em> - Create Typescript interface with all propert&hellip;</a></a></li>
+<li><a href="#前端webpack项目打包-webpack配置-react-天道酬勤-花开半夏-https-www-zhangshilong-cn-work-212240-html"><a href="https://www.zhangshilong.cn/work/212240.html">前端webpack项目打包,webpack配置<em>react</em>-天道酬勤-花开半夏</a></a></li>
+<li><a href="#github-brillout-awesome-react-components-curated-li-https-github-com-brillout-awesome-react-components"><a href="https://github.com/brillout/awesome-react-components">GitHub - brillout/awesome-<em>react</em>-components: Curated Li&hellip;</a></a></li>
+<li><a href="#银川web前端-熟悉vue-js-react-招聘-银川web前端-熟悉vuej-https-www-kanzhun-com-recruit-313123-c124"><a href="https://www.kanzhun.com/recruit/313123/c124/">【银川web前端 熟悉vue<em>js</em> *react*招聘|银川web前端 熟悉vuej&hellip;</a></a></li>
+<li><a href="#如何开发-react-native-原生模块-native-modules-看完这篇-http-www-kaotop-com-it-244581-html"><a href="http://www.kaotop.com/it/244581.html">如何开发<em>React</em> Native 原生模块(Native Modules)?看完这篇&hellip;</a></a></li>
+<li><a href="#node-js-的下载安装及环境配置及常见问题-react-学习必备-n-https-www-pudn-com-news-62e7df06864d5c73ac3abd0a-html"><a href="https://www.pudn.com/news/62e7df06864d5c73ac3abd0a.html">node*js*的下载安装及环境配置及常见问题&ndash;*react*学习必备&ndash;n&hellip;</a></a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if(leftPos<220){
+                postToc.css({"width":leftPos-10,"margin-left":(0-leftPos)})
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">React周刊 - 第一期</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年8月8日
+        </date>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="post-content">
+            
+
+<h2 id="react">React</h2>
+
+<p><a href="https://zachdtaylor.com/blog/some-thoughts-on-server-state-in-remix?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>Remix 中关于服务器状态的一些思考</strong></a></p>
+
+<p>关于 Remix 中状态和服务器调用管理的一个有趣想法，它被设计为在客户端使用和不使用 JavaScript。它可以回退到普通的旧浏览器行为，而 JS 只是一个奖励。</p>
+
+<p><a href="https://sergiodxa.com/articles/run-next-and-remix-on-the-same-server?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>在同一台服务器上运行 Next 和 Remix</strong></a></p>
+
+<p>一个有趣的设置，它表明我们可以在同一个 Node.js 服务器中混合使用 Remix 和 Next.js。这有助于设计一个增量迁移策略来采用或评估 Remix。</p>
+
+<p><a href="https://www.fullstackfish.com/posts/2021-12-31-remix-prisma-sqlite/?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>Remix、SQLite 和 Prisma， 神奇！</strong></a></p>
+
+<p>另一个很好的 Remix 功能演示。能够从加载器函数调用 Prisma 是非常强大的。它提醒其他解决方案，例如 Next.js（但以更集中的方式）和服务器组件。</p>
+
+<p><a href="https://www.remotion.dev/blog/2-6?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>移动 2.6</strong></a></p>
+
+<p>此 React 视频制作库的最新版本。Remotion 播放器现在很稳定。新的错误叠加和听力图模板。下一个版本肯定会是 3.0，具有 AWS lambda 无服务器渲染支持和快速编码视频的能力！</p>
+
+<p><strong>附加功能：</strong></p>
+
+<ul>
+<li><a href="https://sergiodxa.com/articles/avoid-waterfalls-of-queries-in-remix-loaders?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">避免 Remix 加载器中的查询瀑布</a>：即使 Remix 设法并行化请求，您仍然必须 <code>Promise.all ()</code> 在加载器函数中使用</li>
+<li><a href="https://twitter.com/remix_run/status/1480644017029189632?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">Remix 正在招募</a>：远程优先，最少 4 小时与美国重叠</li>
+<li><a href="https://twitter.com/_developit/status/1478453325951610886?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">Preact 现在有一个教程</a>：10 分钟来学习这个 React 轻量级替代方案，并带有一个不错的代码编辑器广告预览</li>
+<li><a href="https://github.com/facebook/relay/releases/tag/v13.0.0?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">Relay 13.0</a>：包括新的 <a href="https://relay.dev/blog/2021/12/08/introducing-the-new-relay-compiler/?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">Rust 编译器</a></li>
+<li><a href="https://twitter.com/shuding_/status/1478877774081318920?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">Nextra 2.0 work-in-progress</a>：为 Next.js SSG (docs/blog) 工具的这次升级计划了很好的堆栈。Docusaurus 的良好竞争😯</li>
+<li><a href="https://varun.ca/three-js-particles/?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">创建 3D 粒子效果的三种方法</a>：对于像我这样学习 Three.js 的人😏</li>
+</ul>
+
+<h2 id="react原生">React原生</h2>
+
+<p><a href="https://medium.com/async/a-react-native-engineer-builds-a-swiftui-app-the-good-the-bad-and-the-bee871bb9baa?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>React Native 工程师构建 SwiftUI 应用程序</strong></a></p>
+
+<p>一个尝试 SwiftUI 的 React-Native 开发者。React 及其声明性模型的知识是可重用的。对动画、导航和 SwiftUI “热重载”的积极反馈。关于错误消息、嵌套语法和其他一些细节的混合反馈。</p>
+
+<p><strong>附加功能：</strong></p>
+
+<ul>
+<li><a href="https://github.com/dohooo/react-native-reanimated-carousel?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">react-native-reanimated-carousel</a> : 基于 Reanimated 2 的新现代轮播库，实际维护</li>
+<li>Marc Rousavy 使用 <a href="https://github.com/mrousavy/react-native-jsi-image?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">react-native-jsi-image</a>将我们升级到 JSI 并且 “ <a href="https://twitter.com/mrousavy/status/1479454627284365322?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">react-native-camera 现在已被弃用，取而代之的是 react-native-vision-camera”</a></li>
+<li><a href="https://blog.logrocket.com/fela-state-driven-styles-react-react-native/?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">Fela：为 React 和 React Native 编写状态驱动的样式</a></li>
+<li><a href="https://davidl.fr/blog/keyboard-react-native-ios-android?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">React Native 中所有可用键盘类型的概述</a>：方便的备忘单资源</li>
+<li><a href="https://twitter.com/appjsconf/status/1478039546331811841?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">App.js conf 六月回归</a>，CFP 明天开启</li>
+<li><a href="https://github.com/gorhom/docusaurus-react-native-plugin?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">docusaurus-react-native-plugin</a> : React-Native-Web 支持 😍</li>
+<li>🎥 <a href="https://www.youtube.com/watch?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter&amp;v=49QR0wUDMG0">The Matrix</a> Reacts ：William Candillon 的第一个 React-Native-Skia 教程，带有很棒的 Remotion 介绍</li>
+<li>🎙️ <a href="https://reactnativeradio.com/episodes/rnr-223-rnr-223-whats-the-difference-between-reactjs-and-react-native?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">RNR 223 - React.js 和 React Native 的区别？</a></li>
+</ul>
+
+<h2 id="其他">其他</h2>
+
+<p><a href="http://click.revue.email/ss/c/TzfyQfvFfgo-vTkXDZQg12c33OFKuG-LOUsY1mTCzfXCNwqsrqZ5mLyHqV4bOGbsiTGPyYeS7oKE5emusLgxRY2MmRsMMpZcM_vdIDX363MZlbW-DfDCK_SpDGfIyK5XCWK7MMWQkPqY3xbprXmNIqlEEekACLx-DPYpxKxT65EjejB5-sA40-T76qqv_KU4/3im/XlzxqhFsQwuIvzDHCdZsKQ/h41/lyV1ZrkOslPiqoHPpzJnhnOeMOLAzNvitYMnSlKRP2E?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>如何不学习 TypeScript</strong></a></p>
+
+<p>Stefan Baumgartner 的精彩文章，充满了我完全同意的好建议。这应该会让你更容易开始使用 TypeScript 并逐渐提高你的技能，而不会流泪和痛苦。TIL 关于 <code>noEmitOnError</code> 国旗。</p>
+
+<p><a href="http://click.revue.email/ss/c/DMfKibboC_ZTmX8uI5IvEFs-iYyUeB8OWAsQpZfO7opypCVMxV65DMiQFKPRnK8RfLGwkbIap_Z1NKNwFYwS33R5hwX3OeV2H5opBlATEHEUys78oODZh6EHmfXUSnQWDRXxK7SOuKepkfZA_Go26TO4UuPmieJ8MCbU6T675XRK5SKmPaXjvodGToEs7duZ5X6M8twsROB0NP-jNfwox8ANvHJ_Gz6sD5QNsYs4-1Q/3im/XlzxqhFsQwuIvzDHCdZsKQ/h42/hEUR3aBm3-fxmjwyrka7N9rpf3wdpEUQnSnSDRGyhOE?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>一个新的容器查询 Polyfill 可以正常工作</strong></a></p>
+
+<p>Chris Coyier 对容器查询的新 polyfill 的分析：一个新的、期待已久的 CSS 功能，对于在 React 等基于组件的框架中封装响应式设计（媒体查询）非常有用。这个 polyfill 现在看起来可用于客户端渲染的应用程序，如果您需要 SSR 支持，不幸的是它会导致 FOUC，直到浏览器支持它。</p>
+
+<p><a href="http://click.revue.email/ss/c/Q4yAUzxwNXTr2G6dmefrx2fvn6sFnQZRid1H4_SzJal6TBx3lSjJzsUJnqLKBHcl2iuKCcgT8YIMHryWuQHwFydkVV9nLv_rJ18-ceMA1G7AnfQ_YZC54BBvkxVl_QXuGA2iGp06Uj1P5bFFcCsOM3JtdKJ46zkJUMQgi5KyAPQo5xOJtrUIlEKhPfw8wHwmMxKrpFwFS2wNWfdsyGR7Wg/3im/XlzxqhFsQwuIvzDHCdZsKQ/h43/M_MtDJcinaOZdPZMu6CAkkg6Y7XWXmA2W1w0WnRtL8w?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>我对 web3 的第一印象</strong></a></p>
+
+<p>Signal 应用程序创建者关于“web 3”的精彩帖子，展示了当前区块链和 NFT 技术状态中一些令人惊讶的奇怪事物。<a href="http://click.revue.email/ss/c/XN2t88CAhalHja1RClwc6ohErwFIqWBFKj0cc3IKFw1MQ3EICkRlDVkHLeDOiZB25apiRI7LNj0dhRYanBvzZ9KKh1P1R8Q8VFZcVlSAB7sw_fHr5P0F4cy8fUMJ4pMDZykaHqKIKPG9M1DUTDEQPjmjLMAnBiv4JxXoNX_9sAeBpVeuUUT42VOxokzMvG--HIVhv8TUOnRnR_k_0lps5225VSNc52SwjTLloQxDsI_UQH7vdna84iv2N1iEUm03/3im/XlzxqhFsQwuIvzDHCdZsKQ/h44/zo8tBM7FkzhNauP860kJ8beDzgjmQS6L3ht8Mib1cyg?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">来自 Web 3 领导者（如Vitalik</a>）的许多出色答案 。还值得一读： <a href="http://click.revue.email/ss/c/XN2t88CAhalHja1RClwc6qnUAAaFz0g9RaRwGc52gx5LkCtZIJytWd38nr43entzxDDgnHpEuD4R-W-CwmhHdRr5HKt5CIC3Fv0cOkWoKSP4aNuWmCN6dmXGkshcf5h9vkdLKNdfMc75szNSSpemi0dqV-XMo9nBTDYLh9bOSOwerFaQfbtPxJcwtbzOcYy0W8w1Dq-X3r8gXEkiIslcV01Bxvl_VVPlSOP2FRwjt3vn57_3BPPLNhvPO5PNZVPs/3im/XlzxqhFsQwuIvzDHCdZsKQ/h45/qEitXJ7EyAkQnmxptpQPBiR_fnrAsEMt9HWgF0qRFME?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter">去中心化的神话和关于 Web 2.0 的谎言</a>。</p>
+
+<p><a href="http://click.revue.email/ss/c/ZBd8V3-T436PmZSgg_no_4E5tQfqvHM5xDNHy89Mg9lOHuMtLEx6RgXhBZMOQpq98JEyWavTEWXZU0brOwteyiFRn6KICL-7pqkV-XAaY7QFtdAzdIKBbI069qMozV8K6M76sgUvFoWW8SbCqPhLkq0KY-xwFQEvY2vWaRNQ2R8/3im/XlzxqhFsQwuIvzDHCdZsKQ/h47/RJQSrYq7Ye3JOr39JzYsTOM_gnPTC7IAKaOK2Mspeco?utm_campaign=thisweekinreact&amp;utm_medium=email&amp;utm_source=Revue newsletter"><strong>NAPI-RS v2</strong></a></p>
+
+<p>这个库允许 Node.js 与 Rust 代码有效交互，并且越来越多地用于我们的现代前端工具。V2 是一种向后兼容的重写，它解决了一些现有的限制，提供了一些自动绑定文件生成和新功能。计划中的 WebAssembly 支持。</p>
+
+<h3 id="react-第一部分-react-基本使用-pudn-com-https-www-pudn-com-news-62eb4c0555398e076b202b48-html"><a href="https://www.pudn.com/news/62eb4c0555398e076b202b48.html">【*React*】第一部分 <em>React</em> 基本使用-pudn.com</a></h3>
+
+<p>是由充满激情的<em>React</em> Loving团队创建的一种时尚,巧妙且动态的前端框架,用于使用可立即使用的<em>React</em> Native通用组件构建跨平台的Android和iOS移动应用程序。 2.为什么选择&hellip;</p>
+
+<h3 id="你需要知道的-12-道-react-面试题-掘金-https-juejin-cn-post-7127614623531925518"><a href="https://juejin.cn/post/7127614623531925518">你需要知道的 12 道 <em>React</em> 面试题 - 掘金</a></h3>
+
+<p>分类: 前端 标签: 前端面试*React.js*分类: 前端 标签: 前端面试*React.js*安装掘金浏览器插件 多内容聚合浏览、多引擎快捷搜索、多工具便捷提效、多模式随心畅享,你想要的&hellip;</p>
+
+<h3 id="使用-react-实现轮播效果组件示例代码-javascript-考高分网-http-www-kaotop-com-it-94415-html"><a href="http://www.kaotop.com/it/94415.html">使用*React*实现轮播效果组件示例代码_JavaScript-考高分网</a></h3>
+
+<p>LunBo.<em>js</em> require(&lsquo;styles/App.css&rsquo;); require(&lsquo;normalize.css/normalize.css&rsquo;); import <em>React</em> from &lsquo;<em>react</em>&rsquo;; import *React*DOM from &lsquo;<em>react</em>-dom&rsquo; const LunBo=<em>React</em>.createClass({ propsType&hellip;</p>
+
+<h3 id="深入理解-react-native原生模块与-js-模块通信的几种方式-jav-http-www-kaotop-com-it-86076-html"><a href="http://www.kaotop.com/it/86076.html">深入理解<em>React</em> Native原生模块与*JS*模块通信的几种方式_Jav&hellip;</a></h3>
+
+<p>通信本质上是信息的交流,具体到计算机语言则是数据的流动。应用中数据在<em>React</em>-Native与原生模块间的流动与共享,完成了与用户的交互,达成了应用的目标。<em>React</em>-Native与OC间通信的数据只能是下&hellip;</p>
+
+<h3 id="react-学习笔记产出-pudn-com-https-www-pudn-com-news-62ed169255398e076b2c7d25-html"><a href="https://www.pudn.com/news/62ed169255398e076b2c7d25.html">*react*学习笔记产出-pudn.com</a></h3>
+
+<p>组件:<em>js</em>+html+css实现局部功能效果的代码和资源的集合; 三、开发者工具 谷歌应用商店,拓展里面添加下载(<em>React</em> Developer Tools(facebook)) 四、组件 1.函数组件 //1.创&hellip;</p>
+
+<h3 id="基于next-js-prisma-postgres和fastfy构建全栈app-https-baijiahao-baidu-com-s-id-1740010025189976507-wfr-spider-for-pc"><a href="https://baijiahao.baidu.com/s?id=1740010025189976507&amp;wfr=spider&amp;for=pc">基于Next.*js*、Prisma、Postgres和Fastfy构建全栈APP</a></h3>
+
+<p>何谓Next.*js*？Next.*js*是一个灵活的基于*React*框架的工具，它能够为您提供创建快速Web应用程序的组件。它通常被称为全栈式*React*框架，因为它可以使前端和后端应用程序位于&hellip;</p>
+
+<h3 id="javascript-reactjs-开发实习工作总结-javascript-react-https-www-kanzhun-com-conclusion-373164"><a href="https://www.kanzhun.com/conclusion/373164/">【javascript <em>reactjs</em> 开发实习工作总结_javascript react&hellip;</a></h3>
+
+<p>javascript <em>reactjs</em> 开发实习工资概况 平均￥—— 工资分布图(k) 数据来源于看准用户,取自该职位最近一年内员工发布的工资信息。 javascript <em>reactjs</em> 开发实习就业前景 &hellip;</p>
+
+<h3 id="前端常考-react-相关面试题-一-知乎-https-zhuanlan-zhihu-com-p-550072060"><a href="https://zhuanlan.zhihu.com/p/550072060">前端常考*react*相关面试题(一) - 知乎</a></h3>
+
+<p>如何在 <em>ReactJS</em> 的 Props上应用验证? 当应用程序在开发模式下运行时,<em>React</em> 将自动检查咱们在组件上设置的所有 props,以确保它们具有正确的数据类型。对于不正确的类型,&hellip;</p>
+
+<h3 id="reactjs-defaultprops-should-be-declared-outside-the-https-stackoverflow-com-questions-64950888-defaultprops-should-be-declared-outside-the-class-body"><a href="https://stackoverflow.com/questions/64950888/defaultprops-should-be-declared-outside-the-class-body"><em>reactjs</em> - defaultProps should be declared outside the &hellip;</a></h3>
+
+<p><em>reactjs</em> typescript Share Improve this question Follow edited Nov 22, 2020 at 13:30 davidism 112k2424 gold badges362362 silver badges320320 bronze badges &hellip;</p>
+
+<h3 id="reactjs-eslint-missing-return-type-on-function-rea-https-stackoverflow-com-questions-67256329-eslint-missing-return-type-on-function-react-component-typescript-error-expl"><a href="https://stackoverflow.com/questions/67256329/eslint-missing-return-type-on-function-react-component-typescript-error-expl"><em>reactjs</em> - ESLint - missing return type on function rea&hellip;</a></h3>
+
+<p><em>reactjs</em> typescript eslint Share Improve this question Follow asked Apr 25, 2021 at 17:30 MrVoland 18122 silver badges1111 bronze badges Add a comment 1 A&hellip;</p>
+
+<h3 id="前端性能优化之按需加载-react-router-webpack-javascrip-http-www-kaotop-com-it-245289-html"><a href="http://www.kaotop.com/it/245289.html">前端性能优化之按需加载(<em>React</em>-router+webpack)_JavaScrip&hellip;</a></h3>
+
+<p>注意!我这里使用的是最新版本的<em>React</em>-router-dom^4.3.1.如果是4.0以下的<em>react</em>-route可直接看四 4.0相比以前实现方式要复杂。需要引入bundle-loader模块。并且自己创建bundle模型实现。1.创建&hellip;</p>
+
+<h3 id="标签-react-router-dom-堆栈内存溢出-https-stackoom-com-tag-react-router-dom">[标签<a href="https://stackoom.com/tag/react-router-dom"><em>react</em>-router-dom] - 堆栈内存溢出</a></h3>
+
+<p>在<em>React</em> <em>JS</em> 中使用类似“about.domain.com”的路径创建路由 I am using <em>React</em> <em>JS</em> and I would like to create a route with path <a href="https://about.domain.com/">https://about.domain.com/</a> , the way&hellip;</p>
+
+<h3 id="桂林web前端-熟悉vue-js-react-招聘-桂林web前端-熟悉vuej-https-www-kanzhun-com-recruit-313123-c33"><a href="https://www.kanzhun.com/recruit/313123/c33/">【桂林web前端 熟悉vue<em>js</em> *react*招聘|桂林web前端 熟悉vuej&hellip;</a></h3>
+
+<p>看准网(Kanzhun.com)★桂林web前端 熟悉vue<em>js</em> *react*招聘栏目为您提供最新桂林web前端 熟悉vue<em>js</em> *react*招聘信息,招聘桂林web前端 熟悉vue<em>js</em> *react*的相关情况,桂林web前端&hellip;</p>
+
+<h3 id="reactjs-error-eisdir-illegal-operation-on-a-direct-https-stackoverflow-com-questions-68671582-error-eisdir-illegal-operation-on-a-directory-when-i-run-react-native-ios"><a href="https://stackoverflow.com/questions/68671582/error-eisdir-illegal-operation-on-a-directory-when-i-run-react-native-ios"><em>reactjs</em> - Error: EISDIR: illegal operation on a direct&hellip;</a></h3>
+
+<p>By clicking “Post Your Answer”, you agree to our terms of service, privacy policy and cookie policy Browse other questions tagged ios <em>reactjs</em> xcode <em>react</em>-&hellip;</p>
+
+<h3 id="reactjs-framer-motion-exit-affter-few-seconds-stac-https-stackoverflow-com-questions-64338587-framer-motion-exit-affter-few-seconds"><a href="https://stackoverflow.com/questions/64338587/framer-motion-exit-affter-few-seconds"><em>reactjs</em> - framer-motion exit affter few seconds - Stac&hellip;</a></h3>
+
+<p><em>reactjs</em> framer-motion Share Improve this question Follow asked Oct 13, 2020 at 15:43 woket7 3166 bronze badges Add a comment 1 Answer Sorted by: 1 I&rsquo;d &hellip;</p>
+
+<h3 id="segmentfault-最新的文章-https-segmentfault-com-feeds-blogs"><a href="https://segmentfault.com/feeds/blogs">SegmentFault 最新的文章</a></h3>
+
+<p>2.3 Fiber链表结构通过介绍,我们知道Fiber使用的是链表结构,准确的说是单链表树结构,详见*React*Fiber.*js*源码。为了放便理解 Fiber 的遍历过程,下面我们就看下Fiber链表结&hellip;</p>
+
+<h3 id="reactjs-create-typescript-interface-with-all-propert-https-stackoverflow-com-questions-66086651-create-typescript-interface-with-all-properties-for-concrete-jsx-component"><a href="https://stackoverflow.com/questions/66086651/create-typescript-interface-with-all-properties-for-concrete-jsx-component"><em>reactjs</em> - Create Typescript interface with all propert&hellip;</a></h3>
+
+<p><em>reactjs</em> typescript <em>react</em>-typescript Share Improve this question Follow asked Feb 7, 2021 at 10:08 asharpharp 14711 silver badge88 bronze badges Add a comm&hellip;</p>
+
+<h3 id="前端webpack项目打包-webpack配置-react-天道酬勤-花开半夏-https-www-zhangshilong-cn-work-212240-html"><a href="https://www.zhangshilong.cn/work/212240.html">前端webpack项目打包,webpack配置<em>react</em>-天道酬勤-花开半夏</a></h3>
+
+<p>详情可以参考:http://<em>react</em>-guide.github.io/<em>react</em>-router-cn/docs/guides/basics/Histories.html *JS*和CSS文件目录配置 第二、第三个location表示指向我的*js*和css所在&hellip;</p>
+
+<h3 id="github-brillout-awesome-react-components-curated-li-https-github-com-brillout-awesome-react-components"><a href="https://github.com/brillout/awesome-react-components">GitHub - brillout/awesome-<em>react</em>-components: Curated Li&hellip;</a></h3>
+
+<p>react-responsive-carousel - <em>React.js</em> Responsive Carousel (with Swipe). react-slick - React carousel component. keen-slider - demo - Performant carousel/slide&hellip;</p>
+
+<h3 id="银川web前端-熟悉vue-js-react-招聘-银川web前端-熟悉vuej-https-www-kanzhun-com-recruit-313123-c124"><a href="https://www.kanzhun.com/recruit/313123/c124/">【银川web前端 熟悉vue<em>js</em> *react*招聘|银川web前端 熟悉vuej&hellip;</a></h3>
+
+<p>看准网(Kanzhun.com)★银川web前端 熟悉vue<em>js</em> *react*招聘栏目为您提供最新银川web前端 熟悉vue<em>js</em> *react*招聘信息,招聘银川web前端 熟悉vue<em>js</em> *react*的相关情况,银川web前端&hellip;</p>
+
+<h3 id="如何开发-react-native-原生模块-native-modules-看完这篇-http-www-kaotop-com-it-244581-html"><a href="http://www.kaotop.com/it/244581.html">如何开发<em>React</em> Native 原生模块(Native Modules)?看完这篇&hellip;</a></h3>
+
+<p>在上述代码中我们通过RCT_EXPORT_METHOD宏来声明向<em>React</em> Native暴露的接口,这样以来我们就可以在*js*文件中通过ImageCrop.selectWithCrop来调用我们所暴露给<em>React</em> Native的接口了。  接下来&hellip;</p>
+
+<h3 id="node-js-的下载安装及环境配置及常见问题-react-学习必备-n-https-www-pudn-com-news-62e7df06864d5c73ac3abd0a-html"><a href="https://www.pudn.com/news/62e7df06864d5c73ac3abd0a.html">node*js*的下载安装及环境配置及常见问题&ndash;*react*学习必备&ndash;n&hellip;</a></h3>
+
+<p>学习*react*我们首先需要使用*react*和<em>react</em>-dom这两个包,然而在终端用npm触发这一事件的前提是已经安装了node*js*。提示为npm : 无法将“npm”项识别为 cmdlet、函数、脚本文&hellip;</p>
+
+        </div>
+
+        <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://tinyletter.com/sblig" method="post" target="popupwindow" onsubmit="window.open('https://tinyletter.com/sblig', 'popupwindow', 'scrollbars=yes,width=800,height=600');return true"><p><label for="tlemail">订阅每周最新React技术和动向</label></p><p><input type="text" style="width:140px" name="email" id="tlemail" /></p><input type="hidden" value="1" name="embed"/><input type="submit" value="邮箱订阅" /> </form>
+
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://weeklyreact.zshipu.com/">知识铺</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://weeklyreact.zshipu.com/post/React%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/">https://weeklyreact.zshipu.com/post/React%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+        <li><strong>免责声明：</strong>本页面内容均来源于站内编辑发布，部分信息来源互联网，并不意味着本站赞同其观点或者证实其内容的真实性，如涉及版权等问题，请立即联系客服进行更改或删除，保证您的合法权益。转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。也可以邮件至 sblig@126.com</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/about/">关于我</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+        <li><a href="/search/">搜索</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/react'>react</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "zshipu/weeklyreact"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://weeklyreact.zshipu.com/">React周刊  --  知识铺 By 知识铺</a>
+        
+        | <a rel="nofollow" target="_blank" href="https://beian.miit.gov.cn/">浙 ICP 备19032823号-1</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://www.flysnow.org/" target="_black"><span class="badge-subject">Design by</span><span class="badge-value bg-brightgreen">飞雪无情</span></a>
+        </div>
+        <div class="github-badge">
+            <a href="https://github.com/flysnow-org/maupassant-hugo" target="_black"><span class="badge-subject">Theme</span><span class="badge-value bg-yellowgreen">Maupassant</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://weeklyreact.zshipu.com/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://weeklyreact.zshipu.com/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://weeklyreact.zshipu.com/post/React%E5%91%A8%E5%88%8A-%E7%AC%AC%E4%B8%80%E6%9C%9F/" title="React周刊 - 第一期">React周刊 - 第一期</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?source=5176.11533457&amp;userCode=tzm8r4hc" title="【2019双12】ALL IN CLoud 低至1折" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1_rYHo7P2gK0jSZPxXXacQpXa-690-388.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?source=5176.11533457&amp;userCode=tzm8r4hc" title="助力产业智慧升级，云服务器首年88元起，更有千元代金券礼包免费领！" target="_blank" style="color:red">
+                
+                    <img src="https://upload-dianshi-1255598498.file.myqcloud.com/345-7c71532bd4935fbdd9a67c1a71e577b1767b805c.200%E7%89%88%E6%9C%ACB.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?source=5176.11533457&amp;userCode=tzm8r4hc" title="【渠道专享低折扣】11月特惠 限时2折" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1hblJl7Y2gK0jSZFgXXc5OFXa-750-400.jpg">
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://weeklyreact.zshipu.com/tags/react/">react</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://geek.zshipu.com//" title="知识铺的博客">知识铺的博客</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://weeklyreact.zshipu.com/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
